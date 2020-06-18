@@ -15,16 +15,23 @@ public class MarsRover {
     }
 
     public String getDirection() {
-        return "N";
+        return direction;
     }
 
     public void execute(List<String> commands) {
-        commands.forEach(command -> {
-            if (command.equals("M")) {
-                coordinate.increaseCoordinateY();
-            }else if (command.equals("L")){
-                this.direction = "W";
-            }
-        });
+        if("N".equals(direction)){
+            commands.forEach(command -> {
+                if (command.equals("M")) {
+                    coordinate.increaseCoordinateY();
+                }else if (command.equals("L")){
+                    this.direction = "W";
+                }else if (command.equals("R")){
+                    this.direction = "E";
+                }
+            });
+
+        }
+
+
     }
 }
