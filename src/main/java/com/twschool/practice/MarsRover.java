@@ -1,20 +1,30 @@
 package com.twschool.practice;
 
-public class MarsRover {
-    int x;
-    int y;
-    String direction;
-    String commands;
+import java.util.List;
 
-    public MarsRover(int x, int y, String direction, String commands) {
-        this.x = x;
-        this.y = y;
+public class MarsRover {
+    private  Coordinate coordinate;
+    private  String direction;
+
+    public MarsRover(Coordinate coordinate, String direction) {
+        this.coordinate = coordinate;
         this.direction = direction;
-        this.commands = commands;
     }
-    public String move(){
-        if("N".equals(direction)){
-            if()
-        }
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public String getDirection() {
+        return "N";
+    }
+
+    public void execute(List<String> commands) {
+        commands.forEach(command -> {
+            if (command.equals("M")) {
+                coordinate.increaseCoordinateY();
+            }else if (command.equals("L")){
+                this.direction = "W";
+            }
+        });
     }
 }
