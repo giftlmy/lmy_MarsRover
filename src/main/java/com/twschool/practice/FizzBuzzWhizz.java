@@ -3,6 +3,9 @@ package com.twschool.practice;
 public class FizzBuzzWhizz {
     public String say(int i) {
         StringBuffer result = new StringBuffer();
+        if(String.valueOf(i).contains("3")){
+            return "Fizz";
+        }
         if (i % 3 == 0) {
             result.append("Fizz");
             if (i % 5 == 0) {

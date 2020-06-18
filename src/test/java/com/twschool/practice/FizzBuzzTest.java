@@ -45,8 +45,15 @@ public class FizzBuzzTest {
     @Test
     public void should_return_BuzzWhizz_given_35() {
         FizzBuzzWhizz fiz = new FizzBuzzWhizz();
-        String result = fiz.say(35);
+        String result = fiz.say(70);
         assertThat(result,is("BuzzWhizz"));
 
+    }
+
+    @Test
+    public void should_return_Fizz_given_13() {
+        FizzBuzzWhizz fiz = new FizzBuzzWhizz();
+        String result = fiz.say(13);
+        assertThat(result,is("Fizz"));
     }
 }
