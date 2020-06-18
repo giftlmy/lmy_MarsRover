@@ -30,6 +30,17 @@ public class MarsRover {
                 }
             });
 
+        }else if("S".equals(direction)){
+            commands.forEach(command -> {
+                if (command.equals("M")) {
+                    coordinate.reducCoordinateY();
+                }else if (command.equals("L")){
+                    this.direction = "E";
+                }else if (command.equals("R")){
+                    this.direction = "W";
+                }
+            });
+
         }
 
 

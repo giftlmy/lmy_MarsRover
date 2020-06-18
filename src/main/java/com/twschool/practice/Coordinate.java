@@ -17,4 +17,8 @@ public class Coordinate {
     public void increaseCoordinateY() {
         this.y = y + 1;
     }
+
+    public void reducCoordinateY() {
+        this.y = y - 1;
+    }
 }
