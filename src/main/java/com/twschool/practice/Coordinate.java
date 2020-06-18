@@ -21,4 +21,7 @@ public class Coordinate {
     public void reducCoordinateY() {
         this.y = y - 1;
     }
+    public void increaseCoordinateX() {
+        this.x= x + 1;
+    }
 }

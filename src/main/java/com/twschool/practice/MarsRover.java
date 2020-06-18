@@ -41,6 +41,17 @@ public class MarsRover {
                 }
             });
 
+        }else if("E".equals(direction)){
+            commands.forEach(command -> {
+                if (command.equals("M")) {
+                    coordinate.increaseCoordinateX();
+                }else if (command.equals("L")){
+                    this.direction = "N";
+                }else if (command.equals("R")){
+                    this.direction = "S";
+                }
+            });
+
         }
 
 
