@@ -44,5 +44,21 @@ public class GuessNumerTest {
         //then
         Assert.assertEquals(GameStatus.SUCCEED, gameStatus);
     }
+    @Test
+    public void should_return_FAILED_when_status_after_input_1256_6_times_given_answer_1234() {
+        //given
+        GameAnswer answer = new GameAnswer("1 2 3 4");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        //when
+        guessNumberGame.guess("1 2 5 6");
+        guessNumberGame.guess("1 2 5 6");
+        guessNumberGame.guess("1 2 5 6");
+        guessNumberGame.guess("1 2 5 6");
+        guessNumberGame.guess("1 2 5 6");
+        guessNumberGame.guess("1 2 5 6");
+        GameStatus gameStatus = guessNumberGame.getStatus();
+        //then
+        Assert.assertEquals(GameStatus.FAILED, gameStatus);
+    }
 
 }
