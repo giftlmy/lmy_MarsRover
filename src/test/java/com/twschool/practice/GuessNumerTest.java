@@ -33,5 +33,16 @@ public class GuessNumerTest {
         //then
         Assert.assertEquals("2A0B", result);
     }
+    @Test
+    public void should_return_SUCCEED_when_status_after_input_1234_given_answer_1234() {
+        //given
+        GameAnswer answer = new GameAnswer("1 2 3 4");
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        //when
+        guessNumberGame.guess("1 2 3 4");
+        GameStatus gameStatus = guessNumberGame.getStatus();
+        //then
+        Assert.assertEquals(GameStatus.SUCCEED, gameStatus);
+    }
 
 }
